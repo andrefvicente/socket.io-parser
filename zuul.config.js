@@ -27,7 +27,9 @@ if (process.env.CI === 'true') {
     {
       transform: {
         name: "babelify",
-        presets: ["@babel/preset-env"]
+        presets: ["@babel/preset-env"],
+        global: true,
+        only: [ /\/node_modules\/debug\// ]
       }
     }
   ]
