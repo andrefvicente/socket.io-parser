@@ -23,6 +23,14 @@ if (process.env.CI === 'true') {
     type: 'ngrok',
     bind_tls: true
   };
+  zuulConfig.browserify = [
+    {
+      transform: {
+        name: "babelify",
+        presets: ["@babel/preset-env"]
+      }
+    }
+  ]
 }
 
 var isPullRequest = process.env.TRAVIS_PULL_REQUEST && process.env.TRAVIS_PULL_REQUEST !== 'false';
