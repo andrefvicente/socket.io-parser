@@ -9,6 +9,6 @@ test-node: ## run tests in Node.js
 	@./node_modules/.bin/mocha --reporter dot --bail test/index.js
 
 test-zuul: ## run tests in the browser
-	@./node_modules/zuul/bin/zuul test/index.js
+	@DEBUG=zuul* ./node_modules/zuul/bin/zuul test/index.js
 
 .PHONY: help test test-node test-zuul
